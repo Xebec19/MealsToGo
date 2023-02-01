@@ -1,7 +1,13 @@
 import React from "react";
 import { Avatar, Button, Card, Text } from "react-native-paper";
+import styled from "styled-components/native";
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
+
+const Title = styled.Text`
+  padding: 16px;
+  color: pink;
+`;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -25,7 +31,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
           left={LeftContent}
         />
         <Card.Content>
-          <Text variant="titleLarge">{name}</Text>
+          <Title>{name}</Title>
           <Text variant="bodyMedium">{address}</Text>
         </Card.Content>
         <Card.Cover source={{ uri: photos[0] }} />
