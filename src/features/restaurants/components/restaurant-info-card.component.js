@@ -6,6 +6,7 @@ import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import { SvgXml } from "react-native-svg";
 import stars from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const Title = styled.Text`
   padding: ${(props) => props.theme.sizes[1]};
@@ -93,9 +94,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               CLOSED TEMPORARILY
             </Text>
           )}
-          <View style={{ paddingLeft: 16 }} />
+          <Spacer variant="left.medium" />
           {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-          <View style={{ paddingLeft: 16 }} />
+          <Spacer variant="left.large" />
           <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
         </SectionEnd>
       </Section>
