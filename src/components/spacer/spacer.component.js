@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import React, { useTheme } from "react";
+import styled, { useTheme } from "styled-components/native";
+import React from "react";
 
 const sizesVariant = {
   small: 1,

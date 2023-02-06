@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "react-native-paper";
 import { Text, Image, View } from "react-native";
 import styled from "styled-components/native";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
@@ -7,54 +6,18 @@ import { SvgXml } from "react-native-svg";
 import stars from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
-
-const Title = styled.Text`
-  padding: ${(props) => props.theme.sizes[1]};
-  color: ${(props) => props.theme.colors.ui.primary};
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
-
-const Address = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.sizes[2]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Rating = styled.View`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-`;
-
-const Section = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const SectionEnd = styled.View`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
-
-const RatingPane = styled.View`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-  justify-content: space-between;
-`;
+import {
+  Icon,
+  Title,
+  Address,
+  Info,
+  RestaurantCard,
+  RestaurantCardCover,
+  Rating,
+  Section,
+  SectionEnd,
+  RatingPane,
+} from "./restaurant-info-card.style";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -81,7 +44,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   return (
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
-      <Title style={{ fontFamily: "Inter_900Black" }}>{name}</Title>
+      <Info>
+        <Text variant="caption">{name}</Text>
+      </Info>
       <Section>
         <Rating>
           {ratingArray.map(() => (
