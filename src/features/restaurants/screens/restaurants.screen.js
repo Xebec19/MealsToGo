@@ -21,11 +21,10 @@ const RestaurantListContainer = styled.View`
 `;
 
 const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
+  contentContainerStyle: {},
 })`
   padding: 16px;
+  margin-bottom: ${(props) => props.theme.space[5]};
 `;
 
 const RestaurantScreen = () => {
